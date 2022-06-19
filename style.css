@@ -1,0 +1,848 @@
+/* :root { 
+
+    --black:#000000;
+    --darkGreen:#20b00a;
+    --darkRed:#AB1822;
+    --green:#26dd1c;
+    --lightgray:#b0afaf;
+    --red:#EB212E;
+    --white:#fff; 
+    --yellow: #f9d71c;
+    --shadow1:rgba(0, 0, 0, 0.3);
+    --shadow2:rgba(0, 0, 0, 0.4);
+    --shadow3:rgba(0, 0, 0, 0.06)
+          
+} */
+
+body{
+    background-color: rgb(253, 253, 215);
+    background-attachment: fixed; 
+    background-image: url('images/darthVader.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    letter-spacing: 2px;   
+    margin:0;
+}
+
+.actions{  
+
+    display:flex;
+    text-align: center;
+}
+
+.actions button{
+
+    border:none;
+    flex:1; 
+    margin:2px;
+    max-height: 50px;
+    min-height: 50px;  
+}
+
+.actions div{
+
+    align-items: center;
+    display:flex;
+    flex:1;
+    font-size: 15px;
+    letter-spacing: 0;
+    font-weight: 700;
+}
+
+.actionsTh{
+
+    display: flex; 
+    justify-content: center;
+    text-align: center;
+    word-break: break-word;
+}
+
+.areUsureText{
+
+    color:var(--main-color);
+    font-size: 15px;   
+}
+
+button{
+
+    border-radius: 7px; 
+    border:none;
+    color:var(--text-button-input-color);
+    cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur),auto !important;
+    transition: all 0.3s ease-in-out;  
+}
+
+button:hover{
+    color:var(--main-color);
+    /* transform: scale(1); */
+}
+
+button:disabled{
+
+    background-color: var(--disabled-input-select-color);
+    pointer-events: none; 
+}
+
+.buttonShowFullCollection{
+    
+    background-color: transparent;
+    border: 1px solid var(--confirm-extend-fullCollection-button-color);
+    color:var(--input-font-color);
+    margin:10px;
+    padding:10px;  
+}
+
+.buttonShowFullCollection:hover{
+
+    background-color: var(--confirm-extend-fullCollection-button-hover-color);
+    box-shadow: 0 0 10px var(--confirm-extend-fullCollection-button-hover-color),0 0 40px var(--confirm-extend-fullCollection-button-hover-color),0 0 80px var(--confirm-extend-fullCollection-button-hover-color);
+    color:var(--text-button-input-color);
+    font-weight:700;
+}
+
+.buttonSearch{
+
+    background-color: var(--main-color);
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; 
+    flex:0.15;
+    max-height: 41px;
+    padding:10px;       
+}
+
+.buttonSearch:hover{
+    
+    background-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color),0 0 40px var(--main-color),0 0 80px var(--main-color);
+    color:var(--text-button-input-color);     
+}
+
+.buttonDelete.all{
+
+    background-color: var(--buttonDeleteAll-checbox-color); 
+    justify-content: center;
+    margin-left:20px;
+    width:30%;  
+    margin:2px;  
+    max-height: 50px;
+    min-height: 50px;   
+}
+
+.buttonDelete.all:hover{
+
+    background-color: var(--buttonDeleteAll-checbox-color);
+    box-shadow: 0 0 10px var(--buttonDeleteAll-checbox-color),0 0 40px var(--buttonDeleteAll-checbox-color),0 0 80px var(--buttonDeleteAll-checbox-color); 
+    border:none;
+    color:var(--text-button-input-color);   
+}
+
+.buttonDelete{
+
+    align-items: center;
+    background-color: var(--delete-no-button-color);
+    display: flex;
+    justify-content: space-between;    
+}
+
+.buttonDelete:hover{
+
+    background-color: var(--delete-no-button-hover-color);
+    box-shadow: 0 0 10px var(--delete-no-button-hover-color),0 0 40px var(--delete-no-button-hover-color),0 0 80px var(--delete-no-button-hover-color);
+}
+
+.buttonExpand{
+
+    background-color: var(--confirm-extend-fullCollection-button-color);    
+}
+
+.buttonExpand:hover{
+
+    background-color: var(--confirm-extend-fullCollection-button-hover-color);
+    box-shadow: 0 0 10px var(--confirm-extend-fullCollection-button-hover-color),0 0 40px var(--confirm-extend-fullCollection-button-hover-color),0 0 80px var(--confirm-extend-fullCollection-button-hover-color);
+}
+
+.closeButton div{
+
+    font-weight: 700;
+    text-transform: capitalize;   
+}
+
+.closeButton:hover{
+
+    background-color: var(--delete-no-button-hover-color);
+    box-shadow: 0 0 10px var(--delete-no-button-hover-color),0 0 40px var(--delete-no-button-hover-color),0 0 80px var(--delete-no-button-hover-color);
+    border:none;
+}
+
+.closeButton{ 
+
+    background-color: transparent;
+    border:1px solid var(--delete-no-button-color);
+    color:var(--main-color);   
+    border-radius: 0%;
+}
+
+#container{
+    
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+}
+
+.created{
+    
+    flex:0.8
+}
+
+.darkMode{
+
+    background-color:#20b00a;
+    border:1px solid #AB1822;
+    color:#f9d71c;
+    font-weight: 600;
+    padding:3px;
+    width:180px;
+}
+
+.darkMode:hover{
+
+    box-shadow: 0 0 10px #26dd1c,0 0 40px #26dd1c,0 0 80px #26dd1c;
+    color:#f9d71c;   
+}
+
+.divColorTheme{
+    
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    top:0;
+    width:100%;
+    
+}
+
+#divTable{
+
+    display: flex;
+    justify-content: center; 
+    width:100%; 
+}
+
+.divExtend{
+
+    display:flex;
+    flex:1.2;   
+}
+
+.divLeft{
+
+    align-items: center;
+    display:flex;
+    flex:1;
+    justify-content:center;  
+}
+
+.divWithNoResultText{
+
+    color:var(--delete-no-button-hover-color);
+    font-size:25px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    margin:100px;
+    text-align: center;
+    text-shadow:
+        0 0 7px var(--delete-no-button-hover-color),
+        0 0 10px var(--delete-no-button-hover-color),
+        0 0 21px var(--delete-no-button-hover-color);
+    text-transform: uppercase;    
+}
+
+
+input{
+    
+    background: transparent;
+    border:1px solid var(--text-button-input-color);
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    color:var(--main-color);
+    cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur),auto !important;
+    font-size: 25px;
+    margin:10px;
+    text-align: center;  
+}
+
+input:hover{
+    border:none;
+    box-shadow: 0 0 10px var(--text-button-input-color),0 0 40px var(--text-button-input-color),0 0 80px var(--text-button-input-color);
+}
+
+input:focus{
+
+    border:none;
+}
+
+input:disabled{
+
+    background-color: var(--disabled-input-select-color);
+    pointer-events: none;
+}
+
+input:disabled:hover{
+
+    box-shadow: none;
+}
+
+input::placeholder{
+
+    color:var(--main-color);
+    font-size:15px;
+    text-transform: uppercase;  
+}
+
+.inputSearch{
+
+    border:1px solid var(--buttonDeleteAll-checbox-color);
+    min-height: 41px;;
+    max-height:41px;
+    margin:0 10px;
+}
+
+.inputSearch:focus{
+
+    background-color: var(--text-button-input-color);
+    color:var(--input-font-color);
+    font-size:25px;
+    outline: none;
+    box-shadow: 0 0 10px var(--text-button-input-color),0 0 40px var(--text-button-input-color),0 0 80px var(--text-button-input-color);
+}
+
+input[type="checkbox"] {
+
+    appearance: none;
+    background-color: var(--buttonDeleteAll-checbox-color);
+    border: 1px solid var(--text-button-input-color);
+    border-radius: 3px;
+    box-shadow: none;
+    display: grid;
+    font: inherit;
+    height: 20px;
+    margin: 0;
+    place-content: center;
+    width: 20px;
+}
+
+input[type="checkbox"]::before{
+
+    content: "";
+    width: 12px;
+    height: 12px;
+    transform: scale(0);
+    transition: 0.10s ease-in-out;
+    background-color: var(--text-button-input-color)
+}
+  
+input[type="checkbox"]:checked::before{
+
+    transform: scale(1);
+}
+
+input[type='checkbox']:hover{
+
+    width: 30px;
+    height: 30px;
+}
+
+.inputForPagination{
+
+    border: 1px solid var(--main-color);
+    width:50px;
+    font-size: 30px;
+}
+.inputForPagination:hover{
+
+    outline: none;
+    border:none;
+    background-color: var(--main-color);
+    color:var(--text-button-input-color);
+    box-shadow: 0 0 10px var(--main-color),0 0 40px var(--main-color),0 0 80px var(--main-color);
+}
+
+.inputForPagination:focus{
+
+    background-color: var(--main-color);
+    border:none;
+    box-shadow: 0 0 10px var(--main-color),0 0 40px var(--main-color),0 0 80px var(--main-color);
+    color:var(--text-button-input-color);
+    outline: none;    
+}
+
+
+img{
+    cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur),auto !important;
+    margin:50px;
+    max-width: 768px;
+}
+
+.id{
+    
+    flex:0.15;  
+}
+
+.key{
+   
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.3) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.4) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border:none;
+    border-radius: 10px;
+    color:var(--main-color);
+    flex:1;
+    font-size: 20px;
+    font-weight: 600;
+    height:200px;
+    letter-spacing: 4px;
+    margin:2px;
+    min-width: 150px;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;  
+}
+
+.key:hover{
+    
+    background-color: var(--key-hover-color);
+    border:none;
+    box-shadow: 0 0 10px var(--key-hover-color),0 0 40px var(--key-hover-color),0 0 80px var(--key-hover-color);
+    color: var(--key-text-hover-color);
+    text-shadow:
+        0 0 7px var(--key-text-hover-color),
+        0 0 10px var(--key-text-hover-color),
+        0 0 21px var(--key-text-hover-color);
+    transform: scale(1.2);  
+}
+
+.lightMode{
+
+    background-color:#2E67F8 ;
+    border:1px solid #8fedbc;
+    color:#fff;
+    font-weight: 600;
+    /* margin:0 20px;
+    padding:3px; */
+    width:180px;
+}
+
+.lightMode:hover {
+
+    color:#fff;
+    background-color:#3f78f9 ;
+    box-shadow: 0 0 10px #3f78f9 ,0 0 40px #3f78f9 ,0 0 80px #3f78f9 ;
+   
+}
+
+
+.no{
+
+    align-items: center;
+    background-color: var(--delete-no-button-color);
+    border: none;
+    color:var(--text-button-input-color);
+    display: flex;
+    flex:1;
+    justify-content: center;
+    max-height: 50px;
+    min-height: 50px;
+}
+
+.no:hover{
+
+    background-color: var(--delete-no-button-hover-color);
+    border: none;
+    box-shadow: 0 0 10px var(--delete-no-button-hover-color),0 0 40px var(--delete-no-button-hover-color),0 0 80px var(--delete-no-button-hover-color);   
+}
+
+.paginationButton{
+
+    background-color:var(--main-color);
+    color:var(--text-button-input-color);
+    height:100%;
+    font-size:18px;
+    margin-right:10px;
+    padding:10px;
+    transition: all 0.2s ease-in-out;  
+
+}
+.paginationButton:hover{
+
+    background-color: var(--main-color);
+    color:var(--text-button-input-color);
+    box-shadow: 0 0 10px var(--main-color),0 0 40px var(--main-color),0 0 80px var(--main-color);
+}
+
+.paginationDiv{
+
+    align-items: center;
+    display: flex;
+    height:60px;
+    justify-content: center;
+    margin-top:40px;
+}
+
+.paginationDiv div{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px; 
+}
+
+.paginationButton.right:hover{
+
+    transform: translateX(10px);   
+}
+
+.paginationButton.left:hover{
+
+    transform: translateX(-10px);   
+}
+
+#resultsDiv{
+  
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin:20px 0 0 0;
+}
+
+#resultsAndSearch{
+
+    align-items: center;
+    color: var(--main-color);
+    display:flex;
+    font-size: 20px;
+    justify-content:center;
+    margin:20px;
+    width: 70vw;
+  }
+
+
+.removeArea{
+
+    display:flex;
+    flex-direction: column;
+    font-size: 10px;
+    text-align: center;
+}  
+
+.removeArea div{
+
+    flex:1
+}
+ 
+
+
+.row{
+
+    display:flex;  
+}
+
+.rowDiv{
+
+    margin:10px; 
+    display: flex;
+}
+
+select{
+
+    background-color: var(--select-color);
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur),auto !important;
+    font-weight: 600;
+    font-size: 25px;
+    height:58px;
+    margin:0 20px;
+    width:60px;  
+    border-radius: 7px;  
+    outline:none;
+}
+
+select:hover{
+
+    box-shadow: 0 0 10px var(--select-color),0 0 40px var(--select-color),0 0 80px var(--select-color);
+}
+
+select:disabled{
+
+    background-color:var(--disabled-input-select-color);
+    color:black;
+    pointer-events: none; 
+}
+
+.spanBetweenPagination{
+
+    color:var(--main-color);
+    font-size:30px;
+    margin: 0 20px 0 20px;  
+}
+
+.spanForSearch{
+
+    display: flex;
+    justify-content: center;   
+}
+
+#table {
+
+    border-bottom:1px solid var(--main-color);
+    color:var(--main-color);
+    display:flex;
+    flex-direction: column;  
+    padding-bottom: 12px;
+    width: 70vw;   
+}
+
+.themeSpan{
+
+    color:white;
+    flex:1;
+    text-align:center
+}
+
+tr{
+    
+    display:flex;
+    margin-bottom:10px;
+}
+
+.trDeleteAllChecked{
+
+    display: flex;
+    justify-content:flex-end;  
+}
+
+.trDeleteAllChecked div{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trDeleteAllChecked span{
+
+    margin:0 20px;
+    text-transform: uppercase;
+    border:1px solid var(--main-color);
+    padding:10px;
+}
+
+.trDeleteAllChecked button{
+
+    margin:2px;
+    min-width: 60px; 
+}
+
+th{ 
+    
+    align-items: center;
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    color:var(--text-button-input-color);
+    display:flex;
+    flex:1;
+    font-size: 15px;
+    margin-bottom: 20px;
+    min-height:5vh ; 
+    word-break: break-word;
+    opacity:0.7;
+}
+
+td{
+
+    min-height:5vh;
+    flex:1;
+    word-break: break-word;
+    margin-left: 5px;
+    font-size: 16px;  
+}
+
+.tableExtend{
+
+    background-color:transparent;
+    color: var(--main-color);
+    flex:1;  
+}
+
+.yes{
+
+    color:var(--text-button-input-color);
+    flex:1;
+    background-color:var(--confirm-extend-fullCollection-button-color) ;
+    display: flex;
+    max-height: 50px;
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
+    border: none;  
+}
+
+.yes:hover{
+
+    border: none;
+    background-color:var(--confirm-extend-fullCollection-button-hover-color);
+    box-shadow: 0 0 10px var(--confirm-extend-fullCollection-button-color),0 0 40px var(--confirm-extend-fullCollection-button-color),0 0 80px var(--confirm-extend-fullCollection-button-color);
+}
+
+
+
+
+
+@media only screen and  (max-width:1000px){
+
+    body{
+
+        background-image: url(images/darthVaderSmall.jpg);
+    }
+
+    .actions{
+
+        flex-direction: column;
+    }
+
+    #buttonsWithKeysDiv{
+
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        align-items: center;  
+    }
+
+    .buttonShowFullCollection{
+
+        width:100%;
+    }
+
+    .closeButton{
+
+        width:90%;  
+    }
+
+    .closeButton div{
+
+        display: flex;
+        justify-content: center;
+        width:95%;
+    }
+
+    #divTable{
+
+        width:100vw;
+        flex-direction: column;
+    }
+
+    .divExtend{
+
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;  
+    }
+
+    img{
+        
+        width:95%;  
+    }
+    
+   
+
+    .inputSearch{
+
+        flex:1;
+        margin:10px 10px 10px 0
+    }
+
+    .inputForPagination{
+
+        font-size: 20px;
+        margin:2px;
+        width:30px;
+    }
+    
+    .key{
+        
+        height:40px;
+        letter-spacing: 10px;
+        margin:10px;
+        padding:10px;
+        width:90%;
+    }
+    
+    .key:hover{
+        
+        transform: scale(1.1);
+    } 
+
+    .paginationButtonSpan{
+
+        display:none;
+    }
+
+    .paginationDiv{
+
+        margin:20px;
+    }
+
+    .paginationButton{
+
+        margin:5px;
+    }
+
+    #resultsAndSearch{
+
+        align-items: center;
+        flex-direction: column; 
+    }
+  
+    .spanBetweenPagination{
+
+        font-size: 20px;
+        margin:2px;   
+    }
+  
+    .spanForSearch{
+
+        align-items: center;
+        display:flex;
+        justify-content: space-between;
+        max-width:none;
+        width:100%;
+    }
+  
+    #tableAndPagination{
+
+        align-items: center;
+        display:flex;
+        flex-direction: column;  
+    }
+
+    #table {
+    
+        color:var(--main-color);
+        display:flex;
+        flex-direction: column;  
+        width:90%;
+        justify-content: center;  
+    }
+   
+    .tableExtend{
+
+        background-color:transparent;
+        color: var(--main-color);
+        width:90%;   
+    }
+
+    td{
+
+        font-size: 12px;;
+    }
+}

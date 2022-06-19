@@ -1,0 +1,22 @@
+:root { 
+
+    
+    --text-button-input-color:#e00c0c;
+    --key-hover-color:#b0afaf;
+    --key-text-hover-color:#000000;
+    --confirm-extend-fullCollection-button-color:#bdc1cb;
+    --confirm-extend-fullCollection-button-hover-color:#bdc1cb;
+    --input-font-color:#fff;
+    --delete-no-button-color:#8fedbc;
+    --disabled-input-select-color:#b0afaf;
+    --delete-no-button-hover-color:#8fedbc;
+    --buttonDeleteAll-checbox-color:#fff; 
+    --main-color: white;
+    --select-color:#f6d5bb;
+
+    --shadow1:rgba(0, 0, 0, 0.3);
+    --shadow2:rgba(0, 0, 0, 0.4);
+    --shadow3:rgba(0, 0, 0, 0.06);
+    --shadow4:rgba(0, 0, 0, 0.09);
+          
+}
